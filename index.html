@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test project</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
+    
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <article class="main">
+        <div class="left">
+            <h2>test@testtest.com</h2>
+            <h3>активен до 18.05.2018г.</h3>
+            <div class="settings">
+                <h2>Настройки</h2>
+                <div class="settings_buttons">
+                    <ul>
+                        <li><a href="#" class="">Интеграция почты</a>
+                            <a href="#"><i class="settings_not fas fa-exclamation-circle"></i></a>
+                        </li>
+                        <li class="settings__active"><a href="#">Подпись в письмах</a>
+                            <i class="fas fa-check"></i></li>
+                        <li><a href="#" class="">Смена пароля</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom-buttons">
+                <ul>
+                    <li><a href="#">Создать шаблон</a></li>
+                    <li><a href="#">Библиотека шаблонов</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <form action="#">
+                <div class="name">
+                    <h3>Ваше имя:</h3>
+                    <input type="text" placeholder="Иванов Иван Иванович" onclick="hide('name-help'), hide('phone-help')">
+                    <a href="#" onclick="show('name-help'),hide('phone-help')"><i class="far fa-question-circle"></i></a>
+                </div>
+                <div id="name-help" class="help" style="display: none;">
+                    <div class="triangle"></div>
+                    <h3>
+                        Имя используется в ваших письмах в поле "От кого" и подставляется в поле автозаполнение {МОЁ_ИМЯ}.
+                    </h3>
+                </div>
+                <div class="phone-number">
+                    <h3>Телефон:</h3>
+                    <input type="text" placeholder="+7 (999) 565-56-56" onclick="hide('name-help'), hide('phone-help')">
+                    <a href="#" onclick="show('phone-help'),hide('name-help')"><i class="far fa-question-circle"></i></a>
+                </div>
+                <div id="phone-help" class="help" style="display: none;">
+                    <div class="triangle"></div>
+                    <h3>
+                        На указанный номер будут приходить СМС-сообщения, если клиент запросит звонок или задаст вопрос во время просмотра предложения.
+                    </h3>
+                </div>
+
+
+                <div class="signature">
+                    <h3>Ваша подпись в письме</h3>
+
+
+                     <textarea name="content" id="input_signature"></textarea>
+                      <script>
+    ClassicEditor
+        .create( document.querySelector( '#input_signature' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+                         
+</script>
+                       
+
+                </div>
+                <button>Сохранить</button>
+
+            </form>
+        </div>
+    </article>
+    
+   
+>
+</body>
+
+</html>
